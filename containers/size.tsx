@@ -10,9 +10,19 @@ export class SizeContainer extends Container<State> {
     this.state = { size: false };
   }
 
-  changeSize(size: "large" | "medium" | "small") {
+  changeSize(window: any) {
+    var size: "large" | "medium" | "small";
+    const height = window.innerHeight;
+    const width = window.innerWidth;
+    if (height - width < 0) {
+      size = "large";
+    } else if (height - width > 100 && height < 820) {
+      size = "small";
+    } else {
+      size = "medium";
+    }
     this.setState({ size });
-    return true;
+    return size;
   }
 }
 

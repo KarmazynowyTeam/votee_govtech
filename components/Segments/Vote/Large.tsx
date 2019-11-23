@@ -1,17 +1,21 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
-} from "recharts";
-import sizeContainer from "../containers/size";
+  TableHead,
+  Paper,
+  Table,
+  TableRow,
+  TableCell,
+  TableBody,
+  Checkbox,
+  Button
+} from "@material-ui/core";
+import { Row } from "react-bootstrap";
+//@ts-ignore
+import Slide from "react-reveal/Slide";
 
-var data: any[] = [];
+type Props = {
+  id: string | string[];
+};
 
 const lists = [
   {
@@ -115,47 +119,224 @@ const lists = [
   }
 ];
 
-function random() {
-  return Math.floor(Math.random() * 1000);
-}
-
-lists.map((val, id) => {
-  var piece = {
-    name: "",
-    party: val.name,
-    votes: 0
-  };
-  val.members.map((val, idx) => {
-    piece.name = val;
-    piece.votes = random() * (idx + 1);
-    data.push(piece);
+export default function Large({ id }: Props) {
+  const [state, setState] = React.useState({
+    checked: "idx:" + "false" + "id:" + "false"
   });
-});
+  return (
+    <div style={{ textAlign: "center" }}>
+      {/* <img
+        src="/now.svg"
+        height="400vh"
+        width="auto"
+        style={{ marginTop: "2vh", marginBottom: "-10vh" }}
+      /> */}
+      <br />
 
-export default class Example extends PureComponent {
-  componentDidMount() {
-    sizeContainer.changeSize(window);
-  }
-  render() {
-    return (
-      <BarChart
-        width={1800}
-        height={700}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis dataKey="votes" />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="votes" fill="#82ca9d" />
-      </BarChart>
-    );
-  }
+      <Slide bottom cascade>
+        <Row style={{ marginLeft: "5vw", marginRight: "5vw" }}>
+          {lists.map(
+            (val, idx) =>
+              idx < 3 && (
+                <Paper
+                  style={{
+                    width: "28vw",
+                    marginLeft: "1vw",
+                    marginBottom: "1vw"
+                  }}
+                  id={"" + idx}
+                >
+                  <Row
+                    style={{
+                      textAlign: "center",
+                      width: "29vw",
+                      marginLeft: "5vw",
+                      marginRight: "1vw",
+                      paddingTop: "2vh"
+                    }}
+                  >
+                    <img
+                      src={val.image}
+                      height="40vh"
+                      width="40vh"
+                      style={{ marginRight: "1vw" }}
+                    />
+                    <h2>Lista nr {idx + 1}</h2>
+                  </Row>
+                  <Row
+                    style={{
+                      textAlign: "center",
+                      width: "29vw",
+                      marginLeft: "4vw",
+                      marginRight: "1vw"
+                    }}
+                  >
+                    <h5>{val.name}</h5>
+                  </Row>
+                  <Table aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell align="left">Nr</TableCell>
+                        <TableCell align="left">Vote</TableCell>
+                        <TableCell
+                          align="center"
+                          style={{ paddingRight: "5vw" }}
+                        >
+                          Name
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {val.members.map((member, id) => (
+                        <TableRow key={member}>
+                          <TableCell align="left">{id + 1}</TableCell>
+                          <TableCell align="left">
+                            <Checkbox
+                              color="default"
+                              inputProps={{
+                                "aria-label": "decorative checkbox"
+                              }}
+                              checked={
+                                state.checked === "idx:" + idx + "id:" + id
+                              }
+                              onChange={e =>
+                                state.checked === e.target.value
+                                  ? setState({
+                                      ...state,
+                                      checked: "false"
+                                    })
+                                  : setState({
+                                      ...state,
+                                      checked: e.target.value
+                                    })
+                              }
+                              value={"idx:" + idx + "id:" + id}
+                            />
+                          </TableCell>
+                          <TableCell component="th" scope="row">
+                            {member}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </Paper>
+              )
+          )}
+        </Row>
+      </Slide>
+      <Slide bottom cascade>
+        <Row style={{ marginLeft: "5vw", marginRight: "5vw" }}>
+          {lists.map(
+            (val, idx) =>
+              idx > 2 && (
+                <Paper
+                  style={{
+                    width: "28vw",
+                    marginLeft: "1vw",
+                    marginBottom: "1vw"
+                  }}
+                >
+                  <Row
+                    style={{
+                      textAlign: "center",
+                      width: "29vw",
+                      marginLeft: "5vw",
+                      marginRight: "1vw",
+                      paddingTop: "2vh"
+                    }}
+                  >
+                    <img
+                      src={val.image}
+                      height="40vh"
+                      width="40vh"
+                      style={{ marginRight: "1vw" }}
+                    />
+                    <h2>Lista nr {idx}</h2>
+                  </Row>
+                  <Row
+                    style={{
+                      textAlign: "center",
+                      width: "29vw",
+                      marginLeft: "4vw",
+                      marginRight: "1vw"
+                    }}
+                  >
+                    <h5>{val.name}</h5>
+                  </Row>
+                  <Table aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell align="left">Nr</TableCell>
+                        <TableCell align="left">Vote</TableCell>
+                        <TableCell
+                          align="center"
+                          style={{ paddingRight: "5vw" }}
+                        >
+                          Name
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {val.members.map((member, id) => (
+                        <TableRow key={member}>
+                          <TableCell align="left">{id + 1}</TableCell>
+                          <TableCell align="left">
+                            <Checkbox
+                              color="default"
+                              inputProps={{
+                                "aria-label": "decorative checkbox"
+                              }}
+                              checked={
+                                state.checked === "idx:" + idx + "id:" + id
+                              }
+                              onChange={e =>
+                                state.checked === e.target.value
+                                  ? setState({
+                                      ...state,
+                                      checked: "false"
+                                    })
+                                  : setState({
+                                      ...state,
+                                      checked: e.target.value
+                                    })
+                              }
+                              value={"idx:" + idx + "id:" + id}
+                            />
+                          </TableCell>
+                          <TableCell component="th" scope="row">
+                            {member}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </Paper>
+              )
+          )}
+        </Row>
+      </Slide>
+      <Slide>
+        <Row
+          style={{
+            marginLeft: "6vw",
+            marginRight: "5vw",
+            textAlign: "center",
+            marginBottom: "5vh"
+          }}
+        >
+          <Button
+            style={{
+              width: "90vw",
+              height: "5vh",
+              textAlign: "center",
+              color: "white"
+            }}
+          >
+            Submit
+          </Button>
+        </Row>
+      </Slide>
+    </div>
+  );
 }

@@ -5,7 +5,20 @@ const offline = require("next-offline");
 
 module.exports = withPlugins([
   [optimizedImages, {}],
-  [CSS, { url: false }],
+  [
+    CSS,
+    {
+      url: false,
+      exportPathMap: function() {
+        return {
+          "/": { page: "/" },
+          "/vote": { page: "/vote" },
+          "/voting": { page: "/voting" },
+          "/results": { page: "/results" }
+        };
+      }
+    }
+  ],
   [
     offline,
     {
