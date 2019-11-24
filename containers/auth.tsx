@@ -11,7 +11,7 @@ export class AuthContainer extends Container<State> {
     super();
     this.state = {
       isLoggedIn: false,
-      url: "http://localhost:3000"
+      url: "http://localhost:3000/fetch_user"
     };
   }
 }

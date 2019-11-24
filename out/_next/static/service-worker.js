@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "url": "/_next/static/chunks/commons.3a44d018821a23af55d3.js",
-    "revision": "a83c0e50c9945f1e6d34"
+    "url": "/_next/static/chunks/commons.1d9b6ccaade97dda2f1c.js",
+    "revision": "64c54cca6a0a675722af"
   },
   {
     "url": "/_next/static/chunks/styles.eeac48f1a9433f585700.js",
@@ -9,39 +9,39 @@ self.__precacheManifest = [
   },
   {
     "url": "/_next/static/css/commons.bbea3502.chunk.css",
-    "revision": "a83c0e50c9945f1e6d34"
+    "revision": "64c54cca6a0a675722af"
   },
   {
     "url": "/_next/static/css/styles.3a82d454.chunk.css",
     "revision": "57615f230aa33ce9f5ad"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/_app.js",
-    "revision": "c5630790d1f99d0d5c3f"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/_app.js",
+    "revision": "537829e0e1d709dc708d"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/_error.js",
-    "revision": "9026de279d4c515620ab"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/_error.js",
+    "revision": "94505c4375059071bd14"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/candidates.js",
-    "revision": "beb5e722442d989ddd87"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/candidates.js",
+    "revision": "ad160e9aeda4edbc126a"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/index.js",
-    "revision": "cce03bdc0136f2d1d8aa"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/index.js",
+    "revision": "2f2ed00a2d30e1989a82"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/results.js",
-    "revision": "4579a4d7f7bd93e2e773"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/results.js",
+    "revision": "834680a85d9a22d6ee86"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/vote.js",
-    "revision": "2deb6dd54f44ed5a5ffb"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/vote.js",
+    "revision": "f822ee0aab02ee87c256"
   },
   {
-    "url": "/_next/static/o248KZqXwrTZQAVOvomzC/pages/voting.js",
-    "revision": "4c5ef61dc932f985a0ef"
+    "url": "/_next/static/fbWR2s-3el29lANN8H8j5/pages/voting.js",
+    "revision": "1241e7572a5e2f169e2b"
   },
   {
     "url": "/_next/static/runtime/main-c334bbef6789e4353936.js",
