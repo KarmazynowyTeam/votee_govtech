@@ -13,6 +13,8 @@ import { Subscribe } from "unstated";
 import Router from "next/router";
 //@ts-ignore
 import Fade from "react-reveal/Fade";
+//@ts-ignore
+import Swal from "sweetalert2";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -196,7 +198,13 @@ export default function Small() {
                               color="inherit"
                               className={classes.imageTitle}
                               onClick={() =>
-                                Router.push("/vote?id=" + image.id)
+                                authContainer.state.isLoggedIn
+                                  ? Router.push("/vote?id=" + image.id)
+                                  : Swal.fire(
+                                      "Authorize first",
+                                      "Sorry you need to authorize Yourself first :C",
+                                      "warning"
+                                    )
                               }
                             >
                               {image.title}

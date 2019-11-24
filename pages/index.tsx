@@ -5,6 +5,8 @@ import { Home } from "../components/Segments";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import authContainer from "../containers/auth";
 import Router, { useRouter } from "next/router";
+//@ts-ignore
+import Swal from "sweetalert2";
 
 type Params = {
   accountNumber?: any;
@@ -32,6 +34,7 @@ export default class Main extends Component<Params, State> {
     return (
       <Layout>
         <div id="home">
+          <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
           <Sub size={this.state.size} />
         </div>
       </Layout>
@@ -44,7 +47,10 @@ const Sub = ({ size }: any) => {
   const number = router.query.accountNumber && router.query.accountNumber;
   const type = router.query.accountType && router.query.accountType;
   const address = router.query.address && router.query.address;
-
   console.log(number, type, address);
+  if (number && type && address) {
+    authContainer.setState({ isLoggedIn: true });
+    Swal.fire("Authorized!", "Go ahed and vote!", "success");
+  }
   return <Home size={size} />;
 };

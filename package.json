@@ -42,6 +42,7 @@
     "react-typist": "^2.0.5",
     "react-typist-loop": "^0.0.5",
     "recharts": "^1.8.5",
+    "sweetalert2": "^9.4.0",
     "typescript": "^3.6.4",
     "unstated": "^2.1.1",
     "votee-sdk": "https://github.com/OpenBankingHackathon-Rotmen/votee-sdk"

@@ -15,6 +15,7 @@ import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import Link from "next/link";
 import authContainer from "../../containers/auth";
 import Router from "next/router";
+import { Subscribe } from "unstated";
 
 type Props = {
   selected: "home" | "voting" | "results";
@@ -55,31 +56,35 @@ export default class Sidenav extends Component<Props> {
             </NavIcon>
             <NavText>Results</NavText>
           </NavItem>
-          {authContainer.state.isLoggedIn ? (
-            <NavItem
-              style={{ bottom: 0 }}
-              onClick={() => {
-                authContainer.setState({ isLoggedIn: false });
-                Router.push("/");
-              }}
-            >
-              <NavIcon>
-                <ArrowBackIcon />
-              </NavIcon>
-              <NavText>Logout</NavText>
-            </NavItem>
-          ) : (
-            <NavItem
-              style={{ bottom: 0 }}
-              //@ts-ignore
-              onClick={() => (window.location = authContainer.state.url)}
-            >
-              <NavIcon>
-                <ArrowForwardIcon />
-              </NavIcon>
-              <NavText>Login</NavText>
-            </NavItem>
-          )}
+          <Subscribe to={[authContainer]}>
+            {container =>
+              container.state.isLoggedIn ? (
+                <NavItem
+                  style={{ bottom: 0 }}
+                  onClick={() => {
+                    container.setState({ isLoggedIn: false });
+                    Router.push("/");
+                  }}
+                >
+                  <NavIcon>
+                    <ArrowBackIcon />
+                  </NavIcon>
+                  <NavText>Logout</NavText>
+                </NavItem>
+              ) : (
+                <NavItem
+                  style={{ bottom: 0 }}
+                  //@ts-ignore
+                  onClick={() => (window.location = container.state.url)}
+                >
+                  <NavIcon>
+                    <ArrowForwardIcon />
+                  </NavIcon>
+                  <NavText>Login</NavText>
+                </NavItem>
+              )
+            }
+          </Subscribe>
         </SideNav.Nav>
       </SideNav>
     );

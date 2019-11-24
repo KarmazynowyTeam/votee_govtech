@@ -12,6 +12,10 @@ import {
 import { Row } from "react-bootstrap";
 //@ts-ignore
 import Slide from "react-reveal/Slide";
+import authContainer from "../../../containers/auth";
+//@ts-ignore
+import Swal from "sweetalert2";
+import Router from "next/router";
 
 type Props = {
   id: string | string[];
@@ -231,6 +235,21 @@ export default function Small({ id }: Props) {
               height: "5vh",
               textAlign: "center",
               color: "white"
+            }}
+            onClick={() => {
+              !authContainer.state.voted
+                ? Swal.fire(
+                    "Vote Given!",
+                    "Thank you for voting, every vote counts!",
+                    "success"
+                  )
+                : Swal.fire(
+                    "Dont Cheat!",
+                    "You have already voted before!",
+                    "error"
+                  );
+              setTimeout(() => authContainer.setState({ voted: true }), 500);
+              setTimeout(() => Router.push("/voting"), 500);
             }}
           >
             Submit

@@ -4,6 +4,7 @@ type State = {
   isLoggedIn: boolean;
   search?: string;
   readonly url: string;
+  voted?: boolean;
 };
 
 export class AuthContainer extends Container<State> {
@@ -11,7 +12,8 @@ export class AuthContainer extends Container<State> {
     super();
     this.state = {
       isLoggedIn: false,
-      url: "http://localhost:3000/fetch_user"
+      url: "http://104.46.60.5:3000/fetch_user",
+      voted: false
     };
   }
 }
