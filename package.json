@@ -6,12 +6,16 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export",
+    "serve": "serve out -l 3001"
   },
   "keywords": [],
   "author": "Maciej Sułecki",
   "license": "MIT",
   "description": "Voting online - smart - secure - fast - anonymous",
+  "devDependencies": {
+    "serve": "^11.2.0"
+  },
   "dependencies": {
     "@material-ui/core": "^4.5.2",
     "@material-ui/icons": "^4.5.1",
@@ -39,6 +43,7 @@
     "react-typist-loop": "^0.0.5",
     "recharts": "^1.8.5",
     "typescript": "^3.6.4",
-    "unstated": "^2.1.1"
+    "unstated": "^2.1.1",
+    "votee-sdk": "https://github.com/OpenBankingHackathon-Rotmen/votee-sdk"
   }
 }

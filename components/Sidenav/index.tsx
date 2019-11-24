@@ -56,14 +56,24 @@ export default class Sidenav extends Component<Props> {
             <NavText>Results</NavText>
           </NavItem>
           {authContainer.state.isLoggedIn ? (
-            <NavItem style={{ bottom: 0 }}>
+            <NavItem
+              style={{ bottom: 0 }}
+              onClick={() => {
+                authContainer.setState({ isLoggedIn: false });
+                Router.push("/");
+              }}
+            >
               <NavIcon>
                 <ArrowBackIcon />
               </NavIcon>
               <NavText>Logout</NavText>
             </NavItem>
           ) : (
-            <NavItem style={{ bottom: 0 }}>
+            <NavItem
+              style={{ bottom: 0 }}
+              //@ts-ignore
+              onClick={() => (window.location = authContainer.state.url)}
+            >
               <NavIcon>
                 <ArrowForwardIcon />
               </NavIcon>

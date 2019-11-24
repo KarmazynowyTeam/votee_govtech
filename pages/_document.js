@@ -25,9 +25,13 @@ class MyDocument extends Document {
           <meta property="og:locale" content="pl_PL" />
           <meta name="language" content="en" />
           <meta name="author" content="Maciej Sułecki" />
-          <meta name="theme-color" content="#70b6f1" />
-          <meta name="msapplication-TileColor" content="#70b6f1" />
-          <meta name="msapplication-TileImage" content="/favicon-144.png" />
+          <meta name="theme-color" content="#494949" />
+          <meta name="msapplication-TileColor" content="#494949" />
+          <meta
+            name="msapplication-TileImage"
+            content="/icons/icon-144x144.png"
+          />
+          <meta name="application-name" content="Votee" />
           <meta name="msapplication-config" content="/browserconfig.xml" />
           <link
             rel="stylesheet"

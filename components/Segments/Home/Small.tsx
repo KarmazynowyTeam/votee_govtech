@@ -19,7 +19,7 @@ function Small() {
         <Paper
           style={{
             marginTop: "10vh",
-            backgroundColor: "rgb(48,56,69)",
+            backgroundColor: "rgb(17,66,5)",
             color: "white",
             padding: "5vh 10vh"
           }}

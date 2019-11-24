@@ -10,10 +10,6 @@ type Props = {
 export default class Home extends Component<Props, {}> {
   render() {
     const { size } = this.props;
-    return (
-      <Segment>
-       {size == "large" ? <Large /> : <Small />}
-      </Segment>
-    );
+    return <Segment>{size == "large" ? <Large /> : <Small />}</Segment>;
   }
 }

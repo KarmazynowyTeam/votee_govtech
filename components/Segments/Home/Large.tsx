@@ -21,7 +21,7 @@ function Large() {
             marginTop: "10vh",
             marginRight: "20vh",
             height: "80vh",
-            backgroundColor: "rgb(48,56,69)",
+            backgroundColor: "rgb(17,66,5)",
             color: "white",
             padding: "5vh 5vh"
           }}

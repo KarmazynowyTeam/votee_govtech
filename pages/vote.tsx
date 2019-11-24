@@ -8,6 +8,7 @@ import React, { Component } from "react";
 export default class Main extends Component {
   componentDidMount() {
     sizeContainer.changeSize(window);
+    !authContainer.state.isLoggedIn && Router.push("/voting");
   }
   render() {
     return (
@@ -21,7 +22,6 @@ export default class Main extends Component {
 }
 
 const Sub = () => {
-  !authContainer.state.isLoggedIn && Router.push("/voting");
   var router = useRouter();
   const id = router.query.id && router.query.id;
   return <Vote id={id} />;
