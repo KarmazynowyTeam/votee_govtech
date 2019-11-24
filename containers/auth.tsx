@@ -11,7 +11,7 @@ export class AuthContainer extends Container<State> {
     super();
     this.state = {
       isLoggedIn: false,
-      url: "http://0f6c2a68.ngrok.io/fetch_user"
+      url: "http://localhost:3000"
     };
   }
 }
