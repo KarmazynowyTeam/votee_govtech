@@ -2,7 +2,6 @@ import Layout from "../components/Layout";
 import sizeContainer from "../containers/size";
 import { Component } from "react";
 import { Home } from "../components/Segments";
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import authContainer from "../containers/auth";
 import Router, { useRouter } from "next/router";
 //@ts-ignore

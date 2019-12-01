@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Provider, Subscribe } from "unstated";
 import "bootstrap-css-only/css/bootstrap.min.css";
+import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import sizeContainer from "../../containers/size";
 import Head from "next/head";
 import Sidenav from "../Sidenav";

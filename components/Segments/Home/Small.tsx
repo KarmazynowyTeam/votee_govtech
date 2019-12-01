@@ -62,22 +62,15 @@ function Small() {
           </Typography>
           <Typography
             component="p"
-            style={{ marginTop: "5vh", fontSize: "2vh" }}
+            style={{ marginTop: "6vh", fontSize: "2vh" }}
           >
-            Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Fusce sit amet leo sit amet eros aliquet efficitur mollis vel orci.
-            Sed tempor at tellus et mollis. Cras in dui eget dui varius
-            malesuada. Etiam efficitur laoreet enim et congue. Aliquam eu
-            tincidunt massa. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Suspendisse justo libero,
-            dignissim sed finibus vel, tempus eu mi. Donec ac urna tortor.
-            Integer convallis volutpat nunc vel porta. Proin non eleifend magna,
-            imperdiet efficitur urna. Sed id neque pharetra, tristique quam vel,
-            finibus velit. Cras nec metus urna. Aliquam est lorem, laoreet quis
-            nibh in, sodales malesuada ipsum. Donec eget maximus tellus.
-            Vestibulum porta, augue ut convallis tempor, nisl quam congue purus,
-            ac tincidunt lorem magna et leo. Vivamus lectus quam, placerat at
-            est a, fringilla consectetur magna.
+            Welcome to Votee! Votee works on the polish e-puap that allows us to confirm your identity by digital signature. All private information is
+            stored on your browser and is encrypted before being sent to the
+            blockchain, so make sure you are using a personal device and not a
+            public one. If you don’t own a bank account in a European country,
+            please go to your nearest polling booth to vote. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Fusce sit amet leo sit amet
+            eros aliquet efficitur mollis vel orci.
           </Typography>
         </Paper>
       </div>

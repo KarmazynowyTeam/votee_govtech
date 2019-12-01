@@ -12,7 +12,7 @@ export class AuthContainer extends Container<State> {
     super();
     this.state = {
       isLoggedIn: false,
-      url: "http://104.46.60.5:3000/fetch_user",
+      url: "https://pz.gov.pl/dt/login/login?urlt=xvm9g2cfhrf31gwp40ay",
       voted: false
     };
   }

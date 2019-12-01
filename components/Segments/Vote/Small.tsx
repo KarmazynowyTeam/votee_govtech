@@ -237,17 +237,19 @@ export default function Small({ id }: Props) {
               color: "white"
             }}
             onClick={() => {
-              !authContainer.state.voted
-                ? Swal.fire(
-                    "Vote Given!",
-                    "Thank you for voting, every vote counts!",
-                    "success"
-                  )
-                : Swal.fire(
-                    "Dont Cheat!",
-                    "You have already voted before!",
-                    "error"
-                  );
+              setTimeout(() => {
+                !authContainer.state.voted
+                  ? Swal.fire(
+                      "Vote Given!",
+                      "Thank you for voting, every vote counts!",
+                      "success"
+                    )
+                  : Swal.fire(
+                      "Dont Cheat!",
+                      "You have already voted before!",
+                      "error"
+                    );
+              }, 1000);
               setTimeout(() => authContainer.setState({ voted: true }), 500);
               setTimeout(() => Router.push("/voting"), 500);
             }}

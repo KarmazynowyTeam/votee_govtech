@@ -72,17 +72,17 @@ export default class Sidenav extends Component<Props> {
                   <NavText>Logout</NavText>
                 </NavItem>
               ) : (
-                <NavItem
-                  style={{ bottom: 0 }}
-                  //@ts-ignore
-                  onClick={() => (window.location = container.state.url)}
-                >
-                  <NavIcon>
-                    <ArrowForwardIcon />
-                  </NavIcon>
-                  <NavText>Login</NavText>
-                </NavItem>
-              )
+                  <NavItem
+                    style={{ bottom: 0 }}
+                    //@ts-ignore
+                    onClick={() => (window.location = container.state.url)}
+                  >
+                    <NavIcon>
+                      <ArrowForwardIcon />
+                    </NavIcon>
+                    <NavText>Login</NavText>
+                  </NavItem>
+                )
             }
           </Subscribe>
         </SideNav.Nav>
